@@ -1,0 +1,46 @@
+# Configurazione e dati sensibili
+config.php
+.env
+.env.local
+
+# File temporanei
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+*.cache
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node (se usi npm)
+node_modules/
+package-lock.json
+
+# Backup
+backup/
+*.bak
+*.backup
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editor
+*~
+*.swp
+*.swo
+.vimrc
+
+# Database (se aggiungi)
+*.sqlite
+*.sqlite3
+database.db

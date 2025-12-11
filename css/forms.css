@@ -1,0 +1,128 @@
+/* Form Styles */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid var(--medium-gray);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+    color: var(--primary);
+    font-family: inherit;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--medium-gray);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Form Validation */
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+    border-color: var(--error);
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.form-input.success,
+.form-textarea.success,
+.form-select.success {
+    border-color: var(--success);
+    background-color: rgba(39, 174, 96, 0.05);
+}
+
+.form-error {
+    color: var(--error);
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
+
+.form-success {
+    color: var(--success);
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
+
+/* Message Styles */
+.success-message,
+.error-message,
+.warning-message {
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    display: none;
+    animation: slideIn 0.3s ease;
+}
+
+.success-message {
+    background: rgba(39, 174, 96, 0.1);
+    color: var(--success);
+    border-left: 4px solid var(--success);
+}
+
+.error-message {
+    background: rgba(231, 76, 60, 0.1);
+    color: var(--error);
+    border-left: 4px solid var(--error);
+}
+
+.warning-message {
+    background: rgba(243, 156, 18, 0.1);
+    color: var(--warning);
+    border-left: 4px solid var(--warning);
+}
+
+.message-strong {
+    font-weight: 600;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .form-input,
+    .form-textarea,
+    .form-select {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .form-textarea {
+        min-height: 100px;
+    }
+}
