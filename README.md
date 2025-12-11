@@ -1,526 +1,157 @@
 # 🎨 Portfolio di Nicolas (rednixer)
 
-Un portfolio professionale completamente responsive costruito con **PHP 7.4+**, **HTML5**, **CSS3** e **JavaScript vanilla**.
+Portfolio professionale responsive con **PHP**, **HTML5**, **CSS3** e **JavaScript**.
 
 [![GitHub](https://img.shields.io/badge/GitHub-@rednixer-blue?logo=github)](https://github.com/rednixer)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](./README.md)
 
-## 📋 Struttura del Progetto
+## 📋 Struttura
 
 ```
 portfolio/
-├── index.php                 # 🏠 Home page con Typed.js animation
-├── chi-sono.php             # 👤 Bio personale e skill bars
-├── portfolio.php            # 🎯 Progetti con filtri
-├── servizi.php              # 💼 Servizi e prezzi
-├── contatti.php             # 📧 Form contatti con validazione
-├── config.php               # ⚙️ Configurazione sito (da personalizzare)
-├── .htaccess                # 🔒 Configurazione Apache
-├── .gitignore               # 📝 Git ignore file
-│
-├── css/                     # 🎨 Fogli di stile separati
-│   ├── variables.css        # Variabili colori e reset
-│   ├── navbar.css           # Barra di navigazione fixed
-│   ├── buttons.css          # Stili bottoni
-│   ├── cards.css            # Componenti card
-│   ├── forms.css            # Form e validazione
-│   ├── footer.css           # Footer styling
-│   └── pages.css            # Layout pagine
-│
-├── includes/                # 🔧 Componenti PHP comuni
-│   ├── header.php           # Meta tag e navbar
-│   └── footer.php           # Footer e JS globale
-│
-├── api/                     # 🚀 Backend API
-│   └── send-message.php     # Endpoint email con validazione
-│
-├── resources/               # 📁 Immagini e assets
-│   ├── logo.png
-│   ├── hero-profile.jpg
-│   ├── project-web-1.jpg
-│   ├── project-web-2.jpg
-│   ├── project-graphic-1.jpg
-│   └── project-branding-1.jpg
-│
-└── README.md               # Questo file
+├── index.php, chi-sono.php, portfolio.php, servizi.php, contatti.php
+├── config.php              # Configurazione (da personalizzare)
+├── css/                    # 7 file CSS modulari
+├── includes/               # header.php, footer.php
+├── api/send-message.php    # API email
+└── resources/              # Immagini
 ```
 
 ## ⚡ Quick Start
 
-### Requisiti Minimi
-- **PHP**: 7.4 o superiore
-- **Server Web**: Apache con `mod_rewrite` abilitato
-- **Mail**: SMTP configurato (per email da contatti.php)
+**Requisiti**: PHP 7.4+, Apache con mod_rewrite
 
-### Deploy Locale (Windows)
+### Locale
 ```powershell
-# 1. Clona il repository
-git clone https://github.com/Anonimoitaly07/portfolio.git
-cd portfolio
-
-# 2. Avvia un server PHP locale
-php -S localhost:8000
-
-# 3. Apri nel browser
-# http://localhost:8000
-```
-
-### Deploy Locale (macOS/Linux)
-```bash
-git clone https://github.com/Anonimoitaly07/portfolio.git
+git clone https://github.com/rednixer/portfolio.git
 cd portfolio
 php -S localhost:8000
 # http://localhost:8000
 ```
 
-### Deploy in Produzione
+### Produzione
 ```bash
-# 1. Carica i file via FTP/SSH
+# Carica via FTP/SSH
 scp -r . utente@dominio.com:/public_html/portfolio/
 
-# 2. Configura permessi
-chmod 755 api/
-chmod 755 includes/
-chmod 644 *.php
-
-# 3. Personalizza config.php
-# Modifica: email admin, nome sito, dati contatti, social links
-
-# 4. Configura email
-# Verifica che il server ha mail() abilitato o configura SMTP
+# Configura email in api/send-message.php
+# Personalizza config.php
 ```
 
-## 🎯 Caratteristiche Principali
+## 🎯 Caratteristiche
 
-### Architettura
-- ✅ **Sistema di include PHP** - Header e Footer condivisi
-- ✅ **CSS modularizzato** - 7 file CSS separati e facilmente customizzabili
-- ✅ **Responsive Design** - Mobile-first, 100% adattivo
-- ✅ **API Backend** - Endpoint per invio email con validazione completa
-- ✅ **Form Validation** - Client-side (JS) e Server-side (PHP)
-- ✅ **Lazy Loading** - Performance ottimizzate
-- ✅ **Sicurezza** - Sanitazione input, HTTPS redirect, security headers
+- ✅ 5 pagine PHP (index, chi-sono, portfolio, servizi, contatti)
+- ✅ CSS modulare (7 file separati)
+- ✅ Form contatti con email API
+- ✅ Responsive design (mobile-first)
+- ✅ Animazioni (Typed.js, Anime.js)
+- ✅ Validazione (client + server)
+- ✅ Sicurezza (sanitazione input, HTTPS ready)
 
-### Performance
-- 🚀 GZIP compression (configurato)
-- 🚀 Browser caching (1 anno per immagini, 1 mese per CSS/JS)
-- 🚀 CSS separati e minificabili
-- 🚀 Tailwind CSS utility-first
-- 🚀 Lazy loading immagini
+## ⚙️ Configurazione Essenziale
 
-### Animazioni & Effetti
-- ✨ Typed.js - Testo animato nella homepage
-- ✨ Anime.js - Animazioni fluide
-- ✨ Splitting.js - Text splitting effects
-- ✨ Intersection Observer - Reveal animations al scroll
-- ✨ Hover effects su cards e bottoni
-
-## ⚙️ Configurazione
-
-### Step 1: Personalizza config.php
+### 1. config.php
 ```php
-// config.php - Modifica questi valori
-define('SITE_NAME', 'Marco Rossi');
-define('SITE_URL', 'https://marcorossi.com');
-define('ADMIN_EMAIL', 'tua-email@dominio.com'); // IMPORTANTE!
-define('ADMIN_PHONE', '+39 123 456 7890');
-define('ADMIN_LOCATION', 'Bologna, Italia');
-
-// Social media
-define('SOCIAL_LINKEDIN', 'https://linkedin.com/in/marcorossi');
-define('SOCIAL_GITHUB', 'https://github.com/marcorossi');
-define('SOCIAL_INSTAGRAM', 'https://instagram.com/marcorossi');
+define('ADMIN_EMAIL', 'tua-email@dominio.com');
+define('SITE_NAME', 'Nicolas');
+define('SITE_URL', 'https://tuodominio.com');
 ```
 
-### Step 2: Configura l'email (Per contatti.php)
-**Opzione A - PHP mail() (default)**
-```php
-// In api/send-message.php line 6
-$admin_email = 'tua-email@dominio.com';
-// Il server invierà automaticamente le email
-```
-
-**Opzione B - SMTP (consigliato)**
-```php
-// Modifica api/send-message.php per usare PHPMailer o simile
-require 'vendor/autoload.php';
-$mail = new PHPMailer\PHPMailer\PHPMailer(true);
-$mail->isSMTP();
-$mail->Host = 'smtp.tuohost.com';
-$mail->Username = 'tua-email@dominio.com';
-$mail->Password = 'password_smtp';
-```
-
-### Step 3: Personalizza i colori
+### 2. Personalizza colori (css/variables.css)
 ```css
-/* css/variables.css */
 :root {
-    --primary: #1A1A1A;      /* Colore primario */
-    --secondary: #404040;    /* Colore secondario */
-    --accent: #E67E22;       /* Colore accento (arancione) */
-    --bg: #FAFAFA;          /* Background principale */
-    --light-gray: #F5F5F5;   /* Grigio chiaro */
+    --primary: #1A1A1A;
+    --accent: #E67E22;
+    --bg: #FAFAFA;
 }
 ```
 
-### Step 4: Aggiorna immagini
-Sostituisci in `resources/`:
-- `logo.png` - Il tuo logo
-- `hero-profile.jpg` - Foto profilo
-- `project-*.jpg` - Screenshot progetti
+### 3. Aggiungi immagini
+- `resources/logo.png`
+- `resources/hero-profile.jpg`
+- `resources/project-*.jpg`
 
-## 📧 Form di Contatto - Guida Completa
+## 📧 Form Contatti
 
-### Come Funziona
-1. **Form submission** via AJAX (senza reload della pagina)
-2. **Validazione client-side** - JavaScript valida in tempo reale
-3. **Validazione server-side** - PHP verifica e sanitizza i dati
-4. **Email send** - Due email: una all'admin, una di conferma al cliente
-5. **Feedback** - Messaggio di successo/errore all'utente
+Il form invia email tramite `api/send-message.php` con:
+- ✅ Validazione client-side (JavaScript)
+- ✅ Validazione server-side (PHP)
+- ✅ Sanitazione input
+- ✅ Email all'admin + conferma al cliente
 
-### Campi Form
-| Campo | Tipo | Required | Regole |
-|-------|------|----------|--------|
-| Nome | text | ✅ | Min 2 caratteri |
-| Email | email | ✅ | Formato valido |
-| Oggetto | text | ❌ | Libero |
-| Tipo Richiesta | select | ✅ | Valore da lista |
-| Messaggio | textarea | ✅ | Min 10 caratteri |
-| Privacy | checkbox | ✅ | Deve essere accettato |
+**Campi**: Nome, Email, Oggetto, Tipo richiesta, Messaggio, Privacy checkbox
 
-### Tipi di Richiesta
-- `collaborazione` - Proposta di partnership
-- `preventivo` - Richiesta preventivo servizi
-- `consulenza` - Consulenza professionale
-- `domande` - Domande generali
-- `altro` - Altro tipo di richiesta
+## 🎨 Modifica Pagine
 
-### Testing Locale
-```bash
-# 1. Avvia il server PHP
-php -S localhost:8000
-
-# 2. Apri contatti.php
-# http://localhost:8000/contatti.php
-
-# 3. Compila il form e verifica i messaggi
-# Se usi Windows, PHP mail() potrebbe non funzionare
-# (configurare SMTP per test)
-```
-
-### Risposta API
-```json
-// Successo (200)
-{
-  "success": true,
-  "message": "Email inviata con successo"
-}
-
-// Errore validazione (400)
-{
-  "success": false,
-  "message": "Errore nella validazione",
-  "errors": {
-    "email": "Email non valida",
-    "messaggio": "Il messaggio deve contenere almeno 10 caratteri"
-  }
-}
-
-// Errore invio (500)
-{
-  "success": false,
-  "message": "Errore nell'invio dell'email"
-}
-```
-
-## 🎨 Personalizzazione Avanzata
-
-### Modifica Contenuti Pagine
-**index.php** - Homepage
+**index.php** - Titolo hero
 ```php
-// Titolo pagina
-<h1 class="hero-title">Ciao, sono Marco Rossi</h1>
-
-// Typed.js animation
-<script>
-  new Typed('#typed-text', {
-    strings: ['Full Stack Developer', 'Web Designer', 'UI/UX Specialist'],
-    typeSpeed: 50,
-    backSpeed: 30,
-    loop: true
-  });
-</script>
+<h1>Ciao, sono Nicolas</h1>
 ```
 
-**chi-sono.php** - Chi sono
+**chi-sono.php** - Skills
 ```php
-// Aggiorna skills e percentuali
-<div class="skill-item">
-  <span>PHP</span>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 90%"></div>
-  </div>
-</div>
+<div class="skill-progress" style="width: 90%">PHP</div>
 ```
 
-**portfolio.php** - Progetti
+**portfolio.php** - Aggiungi progetti
 ```php
-// Aggiungi progetti nella griglia
 <div class="portfolio-item" data-category="web">
-  <img src="resources/project-web-3.jpg" alt="Progetto">
+  <img src="resources/project.jpg" alt="Progetto">
   <h3>Nome Progetto</h3>
-  <p>Descrizione</p>
 </div>
 ```
 
-**servizi.php** - Servizi
+**servizi.php** - Modifica servizi/prezzi
 ```php
-// Modifica servizi e prezzi
 <div class="service-card">
-  <h3>Web Development</h3>
+  <h3>Servizio</h3>
   <p class="price">€1.200</p>
-  <ul>
-    <li>Design responsive</li>
-    <li>SEO optimized</li>
-  </ul>
 </div>
 ```
 
-### CSS Customization
-**Colori**
-```css
-/* css/variables.css */
-:root {
-    --primary: #1A1A1A;      /* Nero: testo principale */
-    --accent: #E67E22;       /* Arancione: CTA e hover */
-    --bg: #FAFAFA;          /* Bianco: background */
-}
-```
+## 🔒 Sicurezza
 
-**Font**
-```css
-/* css/variables.css */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+- ✅ Input sanitization (htmlspecialchars)
+- ✅ Email validation (filter_var)
+- ✅ HTTPS redirect (.htaccess)
+- ✅ Security headers configurati
+- ✅ .gitignore protegge config.php
 
-body {
-    font-family: 'Montserrat', sans-serif;
-}
-```
+## 📱 Responsive & SEO
 
-**Spacing**
-```css
-/* Aumenta/riduci spaziatura */
-.section-padding {
-    padding: 60px 20px; /* Modifica questi valori */
-}
-```
+- ✅ Mobile-first design
+- ✅ Breakpoint: 768px, 1024px
+- ✅ Meta tags per ogni pagina
+- ✅ GZIP compression
+- ✅ Browser caching
+- 💡 Aggiungi Open Graph tags per social sharing
 
-## 🔒 Sicurezza & Privacy
+## 🐛 Troubleshooting
 
-### Implementazioni di Sicurezza
-| Funzionalità | Stato | Dettagli |
-|-------------|-------|---------|
-| **Input Sanitization** | ✅ | htmlspecialchars() per tutti gli input |
-| **Email Validation** | ✅ | filter_var() con FILTER_VALIDATE_EMAIL |
-| **HTTPS Redirect** | ✅ | .htaccess force HTTPS |
-| **Security Headers** | ✅ | X-Content-Type-Options, X-Frame-Options, X-XSS-Protection |
-| **GZIP Compression** | ✅ | Riduce size dei file |
-| **File Protection** | ✅ | .env, .json, .md files protetti |
-
-### File Sensibili (non commitare su GitHub)
-```
-# .gitignore - Questi file NON vengono uploadati
-config.php          # Contiene email admin
-.env                # Variabili d'ambiente
-api/logs/           # Log files
-cache/              # Cache files
-node_modules/       # Dipendenze (se aggiunti)
-.DS_Store           # macOS files
-Thumbs.db           # Windows files
-```
-
-### Consigli di Sicurezza Aggiuntivi
-1. **CSRF Protection** - Aggiungi token CSRF al form
-   ```php
-   session_start();
-   $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-   ```
-
-2. **Rate Limiting** - Limitare invii form per IP
-   ```php
-   // In api/send-message.php
-   if (isRateLimited($_SERVER['REMOTE_ADDR'])) {
-       http_response_code(429);
-       exit('Too many requests');
-   }
-   ```
-
-3. **reCAPTCHA** - Aggiungere verificazione bot
-   ```php
-   // In contatti.php
-   <div class="g-recaptcha" data-sitekey="TUO_SITEKEY"></div>
-   ```
-
-4. **Backup Regolari** - Backup database e file
-
-## 📱 Responsive Design & SEO
-
-### Breakpoint Media Query
-```css
-/* Mobile First */
-@media (max-width: 768px) {
-    /* Tablet e mobile */
-}
-
-@media (min-width: 1024px) {
-    /* Desktop */
-}
-
-@media (min-width: 1440px) {
-    /* Large desktop */
-}
-```
-
-### SEO Implementato
-- ✅ Meta tags personalizzati per ogni pagina
-- ✅ Meta description
-- ✅ Responsive viewport
-- ✅ Open Graph tags (da completare)
-- ✅ Structured data (schema.org - da aggiungere)
-
-### SEO Miglioramenti Suggeriti
-```php
-// Aggiungi in includes/header.php
-<meta property="og:title" content="<?php echo $page_title; ?>">
-<meta property="og:description" content="<?php echo $page_description; ?>">
-<meta property="og:image" content="https://tuodominio.com/resources/og-image.jpg">
-<meta property="og:url" content="https://tuodominio.com">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Marco Rossi",
-  "url": "https://marcorossi.com",
-  "sameAs": [
-    "https://linkedin.com/in/marcorossi",
-    "https://github.com/marcorossi"
-  ]
-}
-</script>
-```
-
-### Performance Optimization
-- 🚀 Lazy loading immagini (native: `loading="lazy"`)
-- 🚀 GZIP compression (apache)
-- 🚀 Browser caching (1 anno per static assets)
-- 🚀 Minificazione CSS (possibile)
-- 🚀 Minificazione JS (possibile)
-
-**Performance Score Target**: 90+ su Lighthouse
-
-## 🐛 Troubleshooting & FAQ
-
-### Email non si invia
-**Problema**: Form invia ma non arrivano email
-
-**Soluzioni**:
-1. Verifica che mail() sia abilitato sul server
-   ```bash
-   php -i | grep mail  # Linux/macOS
-   php -i | findstr mail  # Windows
-   ```
-
-2. Controlla la configurazione SMTP in php.ini
-   ```ini
-   [mail function]
-   SMTP = smtp.tuohost.com
-   smtp_port = 587
-   ```
-
-3. Verifica l'email in `config.php` e `api/send-message.php`
-
-4. Controlla lo spam della email
-
-### Pagina bianca (White Screen of Death)
-**Soluzioni**:
-1. Abilita error reporting in `config.php`
-   ```php
-   error_reporting(E_ALL);
-   ini_set('display_errors', 1);
-   ```
-
-2. Controlla i PHP logs
-   ```bash
-   tail -f /var/log/php-errors.log
-   ```
-
-3. Verifica la sintassi PHP
-   ```bash
-   php -l index.php
-   ```
+### Email non funziona
+- Verifica `config.php` e `api/send-message.php`
+- Controlla che mail() sia abilitato: `php -i | findstr mail`
+- Configura SMTP se necessario
 
 ### CSS non si carica
-**Soluzioni**:
-1. Controlla i percorsi relativi in `includes/header.php`
-2. Pulisci cache browser: `Ctrl+Shift+Del` (Chrome) o `Cmd+Shift+Del` (Mac)
-3. Verifica permessi file: `chmod 644 css/*.css`
-4. Controlla Network tab in DevTools per vedere errori 404
+- Pulisci cache: `Ctrl+Shift+Del`
+- Verifica percorsi in `includes/header.php`
+- Controlla DevTools → Network tab per errori 404
 
 ### Form non funziona
-**Soluzioni**:
-1. Apri DevTools → Console e verifica errori JavaScript
-2. Controlla che `api/send-message.php` esista
-3. Verifica CORS headers se il form è su dominio diverso
-4. Prova a richiamare direttamente l'API via curl:
-   ```bash
-   curl -X POST http://localhost:8000/api/send-message.php \
-     -d "nome=Test&email=test@example.com&messaggio=Hello"
-   ```
+- Apri DevTools → Console per errori JavaScript
+- Verifica che `api/send-message.php` esista
+- Prova API direttamente via curl
 
-### .htaccess non funziona
-**Soluzioni**:
-1. Verifica che mod_rewrite sia abilitato
-   ```bash
-   sudo a2enmod rewrite  # Apache
-   sudo systemctl restart apache2
-   ```
+## 📚 Librerie
 
-2. Controlla che il file .htaccess esista e sia leggibile
-   ```bash
-   ls -la .htaccess
-   chmod 644 .htaccess
-   ```
-
-3. Verifica che il VirtualHost consenta override
-   ```apache
-   <Directory /var/www/portfolio>
-       AllowOverride All
-   </Directory>
-   ```
-
-## 📚 Librerie & Dipendenze
-
-### Frontend
-| Libreria | Scopo | CDN/Import |
-|----------|-------|-----------|
-| **Tailwind CSS** | Utility-first CSS | CDN |
-| **Typed.js** | Animazione testo | CDN jsDelivr |
-| **Anime.js** | Animazioni avanzate | CDN jsDelivr |
-| **Splitting.js** | Text splitting effects | CDN jsDelivr |
-| **Google Fonts** | Font Montserrat, Inter | CDN Google Fonts |
-
-### Backend
-- **PHP** 7.4+ (built-in)
-- **Apache** mod_rewrite (per .htaccess)
-
-### Nessuna dipendenza NPM/Composer
-Il progetto **non usa npm o composer**, tutto è tramite CDN.
-Per aggiungere PHPMailer:
-```bash
-composer require phpmailer/phpmailer
-```
+| Libreria | Uso |
+|----------|-----|
+| Tailwind CSS | Styling |
+| Typed.js | Testo animato |
+| Anime.js | Animazioni |
+| Splitting.js | Text effects |
+| Google Fonts | Montserrat, Inter |
 
 ## �️ Roadmap & Futuri Miglioramenti
 
