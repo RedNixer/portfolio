@@ -616,6 +616,6 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ---
 
 **Versione**: 1.0  
-**Data rilascio**: Dicembre 2024  
-**Ultima modifica**: Dicembre 11, 2024  
+**Data rilascio**: Dicembre 2025  
+**Ultima modifica**: Dicembre 11, 2025  
 **Status**: ✅ Production Ready
