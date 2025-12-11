@@ -559,7 +559,7 @@ composer require phpmailer/phpmailer
 Se vuoi contribuire, fai una fork di questo repo e apri una pull request!
 
 ```bash
-git clone https://github.com/TUOUSERNAME/portfolio.git
+git clone https://github.com/rednixer/portfolio.git
 git checkout -b feature/nuova-feature
 git add .
 git commit -m "Add: descrizione della feature"
