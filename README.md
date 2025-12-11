@@ -1,8 +1,8 @@
-# 🎨 Portfolio di Marco Rossi
+# 🎨 Portfolio di Nicolas (rednixer)
 
 Un portfolio professionale completamente responsive costruito con **PHP 7.4+**, **HTML5**, **CSS3** e **JavaScript vanilla**.
 
-[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-blue?logo=github)](https://github.com/Anonimoitaly07/portfolio)
+[![GitHub](https://img.shields.io/badge/GitHub-@rednixer-blue?logo=github)](https://github.com/rednixer)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](./README.md)
 
@@ -566,27 +566,19 @@ git commit -m "Add: descrizione della feature"
 git push origin feature/nuova-feature
 ```
 
-## 📞 Supporto & Contatti
+## 📞 Supporto
 
 ### Segnala Bug
-1. Vai su [GitHub Issues](https://github.com/Anonimoitaly07/portfolio/issues)
+1. Vai su [GitHub Issues](https://github.com/rednixer/portfolio/issues)
 2. Clicca "New Issue"
 3. Descrivi il problema con dettagli
 
 ### Richieste di Feature
 Apri una discussione su GitHub Discussions!
 
-### Contatti Diretti
-- 📧 **Email**: marco.rossi@email.com
-- 📱 **Telefono**: +39 123 456 7890
-- 📍 **Ubicazione**: Bologna, Italia
-- 🔗 **LinkedIn**: [Marco Rossi](https://linkedin.com/in/marcorossi)
-- 🐙 **GitHub**: [@Anonimoitaly07](https://github.com/Anonimoitaly07)
-- 📸 **Instagram**: [@marcorossi](https://instagram.com/marcorossi)
-
 ## 📄 Licenza
 
-Copyright © 2024 Marco Rossi. Tutti i diritti riservati.
+Copyright © 2024 Nicolas (rednixer). Tutti i diritti riservati.
 
 Questo progetto è distribuito sotto licenza **MIT**.
 Sei libero di usare, modificare e distribuire il codice con attribuzione.
@@ -603,6 +595,10 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ```
 
 ---
